@@ -3,6 +3,14 @@ WORKDIR /app
 RUN npm install -g pnpm
 COPY . .
 WORKDIR /app
+
+ARG VITE_API_ENDPOINT
+ENV VITE_API_ENDPOINT=${VITE_API_ENDPOINT}
+ARG VITE_ACCESS_TOKEN
+ENV VITE_ACCESS_TOKEN=${VITE_ACCESS_TOKEN}
+ARG VITE_EMAIL
+ENV VITE_EMAIL=${VITE_EMAIL}
+
 RUN pnpm codegen && pnpm install && pnpm build
 
 # https://github.com/PierreZ/goStatic
