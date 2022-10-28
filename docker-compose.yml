@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  lg-app:
+    container_name: lg-app
+    build:
+      context: .
+      args:
+        VITE_API_ENDPOINT: ${VITE_API_ENDPOINT}
+        VITE_ACCESS_TOKEN: ${VITE_ACCESS_TOKEN}
+        VITE_EMAIL: ${VITE_EMAIL}
+    networks:
+      - caddy
+    labels:
+      caddy: ${DOMAIN_NAME}
+      caddy.reverse_proxy: "{{upstreams 8043}}"
+  
+networks:
+  caddy:
+    external: true  

@@ -1,0 +1,26 @@
+
+kind: pipeline
+type: ssh
+name: Deploy
+
+server:
+  host:
+    from_secret: HOST_ADDR
+  user:
+    from_secret: USER
+  password:
+    from_secret: PASSWORD
+
+steps:
+- name: Deploy via docker
+  environment:
+      VITE_API_ENDPOINT:
+        from_secret: API_ENDPOINT
+      VITE_ACCESS_TOKEN:
+        from_secret: ACCESS_TOKEN
+      VITE_EMAIL:
+        from_secret: EMAIL
+      DOMAIN_NAME:
+        from_secret: DOMAIN_NAME
+  commands:
+    - docker-compose up -d --build --force-recreate

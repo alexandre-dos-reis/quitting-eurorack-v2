@@ -1,0 +1,40 @@
+{
+  "name": "quitting-eurorack",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "concurrently --names \"vite,codegen\" -c \"bgBlue.bold,bgMagenta.bold\" \"vite\" \"pnpm codegen-watch\"",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "codegen": "graphql-codegen --config codegen.ts",
+    "codegen-watch": "graphql-codegen --config codegen.ts --watch"
+  },
+  "dependencies": {
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
+    "graphql-tag": "^2.12.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite-tsconfig-paths": "^3.5.2"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.13.8",
+    "@graphql-codegen/client-preset": "^1.1.1",
+    "@graphql-codegen/typescript": "^2.8.0",
+    "@graphql-codegen/typescript-graphql-request": "^4.5.7",
+    "@graphql-codegen/typescript-operations": "^2.5.5",
+    "@tanstack/react-query-devtools": "^4.13.0",
+    "@types/node": "^18.11.7",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "@vitejs/plugin-react": "^2.2.0",
+    "autoprefixer": "^10.4.12",
+    "concurrently": "^7.5.0",
+    "dotenv": "^16.0.3",
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.0"
+  }
+}
