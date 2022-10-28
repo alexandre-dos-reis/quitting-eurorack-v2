@@ -11,7 +11,7 @@ ENV VITE_ACCESS_TOKEN=${VITE_ACCESS_TOKEN}
 ARG VITE_EMAIL
 ENV VITE_EMAIL=${VITE_EMAIL}
 
-RUN pnpm codegen && pnpm install && pnpm build
+RUN pnpm install && pnpm build
 
 # https://github.com/PierreZ/goStatic
 FROM pierrezemb/gostatic:latest
