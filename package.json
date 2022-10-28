@@ -10,6 +10,7 @@
     "codegen-watch": "graphql-codegen --config codegen.ts --watch"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.13.0",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "graphql-tag": "^2.12.6",
