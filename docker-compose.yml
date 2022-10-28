@@ -1,8 +1,8 @@
 version: '3'
 services:
 
-  lg-app:
-    container_name: lg-app
+  quitting-eurorack:
+    container_name: quitting-eurorack
     build:
       context: .
       args:
